@@ -2,8 +2,10 @@ package com.microservice.auth.service;
 
 import com.microservice.auth.models.User;
 import com.microservice.auth.models.UserLogin;
+import org.springframework.stereotype.Service;
 
-public interface UserLoginService {
-            public void doSignUp(User _newUser);
+@Service
+public interface AuthService {
+            public String doSignUp(User _newUser);
             public void doLogIn(UserLogin _userLogin);
 }
