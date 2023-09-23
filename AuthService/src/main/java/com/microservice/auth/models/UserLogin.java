@@ -24,6 +24,20 @@ public class UserLogin {
     @Column(name="last_login")
     private Date LAST_LOGIN;
 
+    @Column(name="user_type")
+    private String USER_TYPE;
+
+    public UserLogin(Long ID, String EMAIL_ID, String MOBILE_NO, String PASSWORD, Date CREATED_AT, Date UPDATED_AT, Date LAST_LOGIN, String USER_TYPE) {
+        this.ID = ID;
+        this.EMAIL_ID = EMAIL_ID;
+        this.MOBILE_NO = MOBILE_NO;
+        this.PASSWORD = PASSWORD;
+        this.CREATED_AT = CREATED_AT;
+        this.UPDATED_AT = UPDATED_AT;
+        this.LAST_LOGIN = LAST_LOGIN;
+        this.USER_TYPE = USER_TYPE;
+    }
+
     public Long getID() {
         return ID;
     }
@@ -80,6 +94,14 @@ public class UserLogin {
         this.LAST_LOGIN = LAST_LOGIN;
     }
 
+    public String getUSER_TYPE() {
+        return USER_TYPE;
+    }
+
+    public void setUSER_TYPE(String USER_TYPE) {
+        this.USER_TYPE = USER_TYPE;
+    }
+
     @Override
     public String toString() {
         return "UserLogin{" +
@@ -90,6 +112,7 @@ public class UserLogin {
                 ", CREATED_AT=" + CREATED_AT +
                 ", UPDATED_AT=" + UPDATED_AT +
                 ", LAST_LOGIN=" + LAST_LOGIN +
+                ", USER_TYPE='" + USER_TYPE + '\'' +
                 '}';
     }
 }

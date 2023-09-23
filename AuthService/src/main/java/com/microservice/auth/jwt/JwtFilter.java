@@ -2,7 +2,7 @@ package com.microservice.auth.jwt;
 
 import java.io.IOException;
 
-import com.microservice.auth.security.UserLoginDetails;
+import com.microservice.auth.security.UserLoginDetailsViaEmail;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -38,7 +38,7 @@ public class JwtFilter extends OncePerRequestFilter {
 		}
 
 		if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-			UserLoginDetails currentUser = (UserLoginDetails) _userLoginDetailsService.loadUserByUsername(email);
+			UserLoginDetailsViaEmail currentUser = (UserLoginDetailsViaEmail) _userLoginDetailsService.loadUserByUsername(email);
 
 			UsernamePasswordAuthenticationToken userAuthToken = new UsernamePasswordAuthenticationToken(currentUser,
 					null, currentUser.getAuthorities());
