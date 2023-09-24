@@ -16,7 +16,7 @@ public class UserLoginDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserLogin _userLogin;
-        if(username.matches("[0-9]")){
+        if(username.matches("[0-9]+")){
            _userLogin=_userLoginRepo.findUserByMobileNo(username);
            return new UserLoginDetailsViaPhone(_userLogin);
         }else{

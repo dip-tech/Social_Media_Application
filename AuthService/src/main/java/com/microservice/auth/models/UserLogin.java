@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name="tbl_user_login")
 public class UserLogin {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long ID;
     @Column(name="email_id",nullable = false,unique = true)
@@ -26,6 +26,9 @@ public class UserLogin {
 
     @Column(name="user_type")
     private String USER_TYPE;
+
+    public UserLogin() {
+    }
 
     public UserLogin(Long ID, String EMAIL_ID, String MOBILE_NO, String PASSWORD, Date CREATED_AT, Date UPDATED_AT, Date LAST_LOGIN, String USER_TYPE) {
         this.ID = ID;

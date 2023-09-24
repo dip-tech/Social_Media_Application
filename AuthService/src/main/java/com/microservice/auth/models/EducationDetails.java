@@ -5,21 +5,21 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="tbl_education_details")
+@Table(name = "tbl_education_details")
 public class EducationDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id",nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", nullable = false)
     private Long ID;
-    @Column(name="user_id",nullable = false)
+    @Column(name = "user_id", nullable = false)
     private Long USER_ID;
-    @Column(name="education_name")
+    @Column(name = "education_name")
     private String EDUCATION_NAME;
-    @Column(name="starting_year")
+    @Column(name = "starting_year")
     private String STARTING_YEAR;
-    @Column(name="ending_year")
+    @Column(name = "ending_year")
     private String ENDING_YEAR;
-    @Column(name="degree_certificate")
+    @Column(name = "degree_certificate")
     private String DEGREE_CERTIFICATE;
 
     public Long getID() {

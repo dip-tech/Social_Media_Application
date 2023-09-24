@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface AuthService {
             public String doSignUp(User _newUser);
-            public void doLogIn(UserLogin _userLogin);
+            public String doLogIn(String _userLogin) throws Exception;
 }

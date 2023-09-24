@@ -4,6 +4,9 @@ import com.microservice.auth.models.User;
 import com.microservice.auth.models.UserLogin;
 import com.microservice.auth.serviceimpl.AuthServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.configurationprocessor.json.JSONException;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
+import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,8 +19,12 @@ public class AuthController {
     public String signUp(@RequestBody User _newUser){
         return _authServiceImp.doSignUp(_newUser);
     }
-    @PostMapping("/authenticate")
-    public String logIn(UserLogin _userLogin){
-        return "";
+    @PostMapping(value = "/authenticate",produces = "application/json")
+    public String logIn(@RequestBody String _userLogin){
+        try{
+            return _authServiceImp.doLogIn(_userLogin);
+        }catch(Exception x){
+            return "AUTHENTICATION FAILED";
+        }
     }
 }
