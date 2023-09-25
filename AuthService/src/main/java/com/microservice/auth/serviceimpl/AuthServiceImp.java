@@ -1,5 +1,4 @@
 package com.microservice.auth.serviceimpl;
-
 import com.microservice.auth.jwt.JwtUtills;
 import com.microservice.auth.models.User;
 import com.microservice.auth.models.UserDetails;
@@ -44,6 +43,7 @@ public class AuthServiceImp implements AuthService {
 
                 _userLogin.setPASSWORD(_bcryptPasswordEncoder.encode(_userLogin.getPASSWORD()));
                 _userLogin.setCREATED_AT(new Date());
+                _userLogin.setUSER_TYPE("SYS_USER");
                 Long _userLoginId=_userLoginRepo.save(_userLogin).getID();
                 UserDetails _userDetails= _newUser.getUserDetails();
                 _userDetails.setUSER_LOGIN_ID(_userLoginId);
@@ -65,8 +65,23 @@ public class AuthServiceImp implements AuthService {
         if(_authentication!=null){
             org.springframework.security.core.userdetails.UserDetails _userDetails=_userLoginDetailsService.loadUserByUsername(_jsonObject.get("user_NAME").toString());
             TOKEN= _jwtUtils.generateJwtToken(_userDetails);
+            String _loginUserName=_jsonObject.get("user_NAME").toString();
+            if(_loginUserName.matches("[0-9]+")){
+                _userLoginRepo.updateLastLoginByUserMobileNo(_loginUserName,new Date());
+            }
+            else{
+                _userLoginRepo.updateLastLoginByUserEmail(_loginUserName,new Date());
+            }
             return TOKEN;
         }
         return null;
+    }
+
+    @Override
+    public Boolean doValidateToken(String _token) throws Exception {
+        String _username=_jwtUtils.getUsernameFromToken(_token);
+        org.springframework.security.core.userdetails.UserDetails _userDetails=_userLoginDetailsService.loadUserByUsername(_username);
+        Boolean _validationResult=_jwtUtils.validateJwtToken(_token,_userDetails);
+        return _validationResult;
     }
 }

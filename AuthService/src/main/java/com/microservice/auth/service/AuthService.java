@@ -8,4 +8,5 @@ import org.springframework.stereotype.Service;
 public interface AuthService {
             public String doSignUp(User _newUser);
             public String doLogIn(String _userLogin) throws Exception;
+            public Boolean doValidateToken(String _token) throws Exception;
 }
