@@ -37,7 +37,7 @@ public class AuthSecurity {
     @Bean
     public SecurityFilterChain httpSecurityFilterChain(HttpSecurity http) throws Exception{
         http.cors(AbstractHttpConfigurer::disable).csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests(request->
-                request.requestMatchers("/auth/v1/authenticate","/auth/v1/signup")
+                request.requestMatchers("/auth/v1/authenticate","/auth/v1/signup","/auth/v1/check/token/{token}")
                         .permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**")
                         .permitAll()
