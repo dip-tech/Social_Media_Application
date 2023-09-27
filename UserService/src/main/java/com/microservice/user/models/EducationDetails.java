@@ -20,6 +20,18 @@ public class EducationDetails {
     @Column(name = "degree_certificate")
     private String DEGREE_CERTIFICATE;
 
+    public EducationDetails() {
+    }
+
+    public EducationDetails(Long ID, Long USER_ID, String EDUCATION_NAME, String STARTING_YEAR, String ENDING_YEAR, String DEGREE_CERTIFICATE) {
+        this.ID = ID;
+        this.USER_ID = USER_ID;
+        this.EDUCATION_NAME = EDUCATION_NAME;
+        this.STARTING_YEAR = STARTING_YEAR;
+        this.ENDING_YEAR = ENDING_YEAR;
+        this.DEGREE_CERTIFICATE = DEGREE_CERTIFICATE;
+    }
+
     public Long getID() {
         return ID;
     }

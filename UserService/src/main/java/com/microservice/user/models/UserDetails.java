@@ -33,6 +33,23 @@ public class UserDetails {
     @Column(name="about")
     private String ABOUT;
 
+    public UserDetails() {
+    }
+
+    public UserDetails(Long ID, Long USER_LOGIN_ID, String FIRST_NAME, String LAST_NAME, String PROFILE_PHOTO, String GENDER, String STREET_ADDRESS, String CITY, String STATE, String POSTAL_CODE, String COUNTRY, String ABOUT) {
+        this.ID = ID;
+        this.USER_LOGIN_ID = USER_LOGIN_ID;
+        this.FIRST_NAME = FIRST_NAME;
+        this.LAST_NAME = LAST_NAME;
+        this.PROFILE_PHOTO = PROFILE_PHOTO;
+        this.GENDER = GENDER;
+        this.STREET_ADDRESS = STREET_ADDRESS;
+        this.CITY = CITY;
+        this.STATE = STATE;
+        this.POSTAL_CODE = POSTAL_CODE;
+        this.COUNTRY = COUNTRY;
+        this.ABOUT = ABOUT;
+    }
 
     public Long getID() {
         return ID;
