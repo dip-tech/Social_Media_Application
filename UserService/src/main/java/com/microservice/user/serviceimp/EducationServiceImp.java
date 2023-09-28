@@ -4,6 +4,9 @@ import com.microservice.user.models.EducationDetails;
 import com.microservice.user.repo.EducationDetailsRepo;
 import com.microservice.user.repo.UserDetailsRepo;
 import com.microservice.user.services.EducationService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 @Service
@@ -25,7 +28,7 @@ public class EducationServiceImp implements EducationService {
     }
 
     @Override
-    public EducationDetails getEducationDetailsByUserId(Long _userId) throws Exception {
+    public List<EducationDetails> getEducationDetailsByUserId(Long _userId) throws Exception {
         return null;
     }
 

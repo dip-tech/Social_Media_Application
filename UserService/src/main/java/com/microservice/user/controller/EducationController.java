@@ -1,5 +1,7 @@
 package com.microservice.user.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -7,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.microservice.user.models.EducationDetails;
-import com.microservice.user.repo.EducationDetailsRepo;
 import com.microservice.user.serviceimp.EducationServiceImp;
 
 @RestController
@@ -27,5 +28,10 @@ public class EducationController {
             return x.getMessage().toString();
         }
         
+    }
+
+    public List<EducationDetails> doGetEducation(Long _userId){
+
+        return null;
     }
 }
