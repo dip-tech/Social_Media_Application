@@ -1,11 +1,14 @@
 package com.microservice.user.repo;
 
 import com.microservice.user.models.EducationDetails;
+
+import java.util.ArrayList;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface EducationDetailsRepo extends JpaRepository<EducationDetails,Long> {
 
     @Query(value="SELECT * FROM tbl_education_details WHERE user_id=?",nativeQuery = true)
-    public EducationDetails findEducationDetailsByUserId(Long _userId);
+    public ArrayList<EducationDetails> findEducationDetailsByUserId(Long _userId);
 }

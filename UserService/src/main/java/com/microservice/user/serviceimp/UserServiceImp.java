@@ -25,7 +25,7 @@ public class UserServiceImp implements UserService {
     public User doGetUserByUsername(String _username) {
         UserLogin _userLogin;
         UserDetails _userDetails;
-        EducationDetails _educationDetails;
+        ArrayList<EducationDetails> _educationDetails;
         if(_username.matches("[0-9]+")){
              _userLogin=_userLoginRepo.findUserLoginByMobileNo(_username);
         }

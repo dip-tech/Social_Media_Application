@@ -12,6 +12,7 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserServiceImp _userServiceImp;
+
     @GetMapping("/get_user_by_username/{username}")
     public User getUserDetails(@PathVariable("username") String _username){
         User _user=null;

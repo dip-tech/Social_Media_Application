@@ -1,14 +1,16 @@
 package com.microservice.user.models;
 
+import java.util.ArrayList;
+
 public class User {
     private UserLogin userLogin;
     private UserDetails userDetails;
-    private EducationDetails educationDetails;
+    private ArrayList<EducationDetails> educationDetails;
 
     public User() {
     }
 
-    public User(UserLogin userLogin, UserDetails userDetails, EducationDetails educationDetails) {
+    public User(UserLogin userLogin, UserDetails userDetails, ArrayList<EducationDetails> educationDetails) {
         this.userLogin = userLogin;
         this.userDetails = userDetails;
         this.educationDetails = educationDetails;
@@ -30,11 +32,11 @@ public class User {
         this.userDetails = userDetails;
     }
 
-    public EducationDetails getEducationDetails() {
+    public ArrayList<EducationDetails> getEducationDetails() {
         return educationDetails;
     }
 
-    public void setEducationDetails(EducationDetails educationDetails) {
+    public void setEducationDetails(ArrayList<EducationDetails> educationDetails) {
         this.educationDetails = educationDetails;
     }
 
