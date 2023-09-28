@@ -51,12 +51,17 @@ public class UserServiceImp implements UserService {
 
     @Override
     public void updateUserLogin(UserLogin _userLogin) {
-
+        if(_userLogin.getID()!=null){
+            _userLoginRepo.save(_userLogin);
+        }
     }
 
 
     @Override
     public void updateUserDetails(UserDetails _userDetails) {
+        if(_userDetails.getID()!=null){
+            _userDetailsRepo.save(_userDetails);
+        }
 
     }
 

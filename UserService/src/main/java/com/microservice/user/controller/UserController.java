@@ -3,10 +3,7 @@ package com.microservice.user.controller;
 import com.microservice.user.models.User;
 import com.microservice.user.serviceimp.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +30,18 @@ public class UserController {
             return _userServiceImp.doGetAllUser();
         }catch(Exception x){
             return null;
+        }
+
+    }
+
+    @PutMapping("/update")
+    public String updateUser(@RequestBody User _user){
+        try{
+            _userServiceImp.updateUserLogin(_user.getUserLogin());
+            _userServiceImp.updateUserDetails(_user.getUserDetails());
+            return "UPDATE SUCCESS";
+        }catch(Exception x){
+            return "EXCEPTION FOUND";
         }
 
     }
