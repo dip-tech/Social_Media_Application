@@ -29,7 +29,7 @@ public class EducationServiceImp implements EducationService {
 
     @Override
     public List<EducationDetails> getEducationDetailsByUserId(Long _userId) throws Exception {
-        return null;
+        return _educationDetailsRepo.findEducationDetailsByUserId(_userId);
     }
 
     @Override
