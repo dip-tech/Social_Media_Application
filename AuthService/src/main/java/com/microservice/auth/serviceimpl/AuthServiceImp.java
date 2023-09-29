@@ -44,6 +44,7 @@ public class AuthServiceImp implements AuthService {
                 _userLogin.setPASSWORD(_bcryptPasswordEncoder.encode(_userLogin.getPASSWORD()));
                 _userLogin.setCREATED_AT(new Date());
                 _userLogin.setUSER_TYPE("SYS_USER");
+                _userLogin.setIS_ACTIVE(true);
                 Long _userLoginId=_userLoginRepo.save(_userLogin).getID();
                 UserDetails _userDetails= _newUser.getUserDetails();
                 _userDetails.setUSER_LOGIN_ID(_userLoginId);

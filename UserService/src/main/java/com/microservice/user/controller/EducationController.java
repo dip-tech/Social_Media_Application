@@ -35,4 +35,14 @@ public class EducationController {
             return null;
         }
     }
+
+    @PutMapping("/update")
+    public String doUpdateEducation(@RequestBody EducationDetails _updatedEducationdetails){
+        try{
+            return _educationService.updateEducationDetails(_updatedEducationdetails);
+        }catch(Exception x){
+            x.printStackTrace();
+            return x.getMessage();
+        }
+    }
 }

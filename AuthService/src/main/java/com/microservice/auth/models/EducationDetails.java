@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name = "tbl_education_details")
 public class EducationDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long ID;
     @Column(name = "user_id", nullable = false)
@@ -21,6 +21,8 @@ public class EducationDetails {
     private String ENDING_YEAR;
     @Column(name = "degree_certificate")
     private String DEGREE_CERTIFICATE;
+    @Column(name = "is_active")
+    private Boolean IS_ACTIVE;
 
     public Long getID() {
         return ID;
@@ -70,6 +72,14 @@ public class EducationDetails {
         this.DEGREE_CERTIFICATE = DEGREE_CERTIFICATE;
     }
 
+    public Boolean getIS_ACTIVE() {
+        return IS_ACTIVE;
+    }
+
+    public void setIS_ACTIVE(Boolean IS_ACTIVE) {
+        this.IS_ACTIVE = IS_ACTIVE;
+    }
+
     @Override
     public String toString() {
         return "EducationDetails{" +
@@ -79,6 +89,7 @@ public class EducationDetails {
                 ", STARTING_YEAR='" + STARTING_YEAR + '\'' +
                 ", ENDING_YEAR='" + ENDING_YEAR + '\'' +
                 ", DEGREE_CERTIFICATE='" + DEGREE_CERTIFICATE + '\'' +
+                ", IS_ACTIVE=" + IS_ACTIVE +
                 '}';
     }
 }

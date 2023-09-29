@@ -8,7 +8,7 @@ import java.util.Date;
 @Table(name="tbl_user_login")
 public class UserLogin {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long ID;
     @Column(name="email_id",nullable = false,unique = true)
@@ -27,10 +27,13 @@ public class UserLogin {
     @Column(name="user_type")
     private String USER_TYPE;
 
+    @Column(name="is_active")
+    private boolean IS_ACTIVE;
+
     public UserLogin() {
     }
 
-    public UserLogin(Long ID, String EMAIL_ID, String MOBILE_NO, String PASSWORD, Date CREATED_AT, Date UPDATED_AT, Date LAST_LOGIN, String USER_TYPE) {
+    public UserLogin(Long ID, String EMAIL_ID, String MOBILE_NO, String PASSWORD, Date CREATED_AT, Date UPDATED_AT, Date LAST_LOGIN, String USER_TYPE, boolean IS_ACTIVE) {
         this.ID = ID;
         this.EMAIL_ID = EMAIL_ID;
         this.MOBILE_NO = MOBILE_NO;
@@ -39,6 +42,7 @@ public class UserLogin {
         this.UPDATED_AT = UPDATED_AT;
         this.LAST_LOGIN = LAST_LOGIN;
         this.USER_TYPE = USER_TYPE;
+        this.IS_ACTIVE = IS_ACTIVE;
     }
 
     public Long getID() {
@@ -105,6 +109,14 @@ public class UserLogin {
         this.USER_TYPE = USER_TYPE;
     }
 
+    public boolean getIS_ACTIVE() {
+        return IS_ACTIVE;
+    }
+
+    public void setIS_ACTIVE(boolean IS_ACTIVE) {
+        this.IS_ACTIVE = IS_ACTIVE;
+    }
+
     @Override
     public String toString() {
         return "UserLogin{" +
@@ -116,6 +128,7 @@ public class UserLogin {
                 ", UPDATED_AT=" + UPDATED_AT +
                 ", LAST_LOGIN=" + LAST_LOGIN +
                 ", USER_TYPE='" + USER_TYPE + '\'' +
+                ", IS_ACTIVE=" + IS_ACTIVE +
                 '}';
     }
 }

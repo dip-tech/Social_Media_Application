@@ -3,15 +3,13 @@ package com.microservice.auth.models;
 public class User {
     private UserLogin userLogin;
     private UserDetails userDetails;
-    private EducationDetails educationDetails;
 
     public User() {
     }
 
-    public User(UserLogin userLogin, UserDetails userDetails, EducationDetails educationDetails) {
+    public User(UserLogin userLogin, UserDetails userDetails) {
         this.userLogin = userLogin;
         this.userDetails = userDetails;
-        this.educationDetails = educationDetails;
     }
 
     public UserLogin getUserLogin() {
@@ -30,20 +28,11 @@ public class User {
         this.userDetails = userDetails;
     }
 
-    public EducationDetails getEducationDetails() {
-        return educationDetails;
-    }
-
-    public void setEducationDetails(EducationDetails educationDetails) {
-        this.educationDetails = educationDetails;
-    }
-
     @Override
     public String toString() {
         return "User{" +
                 "userLogin=" + userLogin +
                 ", userDetails=" + userDetails +
-                ", educationDetails=" + educationDetails +
                 '}';
     }
 }

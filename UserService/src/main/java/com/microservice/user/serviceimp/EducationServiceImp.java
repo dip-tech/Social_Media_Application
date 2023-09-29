@@ -19,6 +19,7 @@ public class EducationServiceImp implements EducationService {
     @Override
     public String addEducation(EducationDetails _educationDetails) throws Exception {
         if (_userDetailsRepo.findById(_educationDetails.getUSER_ID()).isPresent()) {
+            _educationDetails.setIS_ACTIVE(true);
             _educationDetailsRepo.save(_educationDetails);
             return "EDUCATION DETAILS ADDED SUCCESSFULLY";
         }else{
@@ -34,7 +35,11 @@ public class EducationServiceImp implements EducationService {
 
     @Override
     public String updateEducationDetails(EducationDetails _updatedEducationDetails) throws Exception {
-        return null;
+        if(_updatedEducationDetails.getID()!=null && _updatedEducationDetails.getUSER_ID()!=null){
+            _educationDetailsRepo.save(_updatedEducationDetails);
+            return "EDUCATION SUCCESSFULLY UPDATED";
+        }
+        return "EDUCATION ID or USER ID MISSING";
     }
 
     @Override
