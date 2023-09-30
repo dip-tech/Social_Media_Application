@@ -9,10 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 
 public interface UserLoginRepo extends JpaRepository<UserLogin,Long> {
-    @Query(value = "SELECT * FROM tbl_user_login WHERE email_id=?",nativeQuery = true)
+    @Query(value = "SELECT * FROM tbl_user_login WHERE email_id=? AND is_active=true",nativeQuery = true)
     public UserLogin findUserByEmail(String _email);
 
-    @Query(value = "SELECT * FROM tbl_user_login WHERE mobile_no=?",nativeQuery = true)
+    @Query(value = "SELECT * FROM tbl_user_login WHERE mobile_no=? AND is_active=true",nativeQuery = true)
     public UserLogin findUserByMobileNo(String _mobileNo);
     @Modifying
     @Transactional
