@@ -43,7 +43,11 @@ public class EducationServiceImp implements EducationService {
     }
 
     @Override
-    public String deleteEducationDetails(EducationDetails _educationDetailsNeedToDelete) throws Exception {
-        return null;
+    public String deleteEducationDetails(Long _educationDetailsIdNeedToDelete) throws Exception {
+        if(_educationDetailsIdNeedToDelete!=null){
+            _educationDetailsRepo.deleteEducationDetailsById(_educationDetailsIdNeedToDelete);
+            return "EDUCATION DETAILS DELETED";
+        }
+        return "EDUCATION DETAILS DO NOT HAVE ID";
     }
 }

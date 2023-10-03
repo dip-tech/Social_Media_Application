@@ -45,4 +45,14 @@ public class EducationController {
             return x.getMessage();
         }
     }
+
+    @DeleteMapping("/delete/{id}")
+    public String doDeleteEducationDetails(@PathVariable("id") Long _id){
+        try{
+            return _educationService.deleteEducationDetails(_id);
+        }catch(Exception x){
+            return x.getMessage();
+        }
+
+    }
 }

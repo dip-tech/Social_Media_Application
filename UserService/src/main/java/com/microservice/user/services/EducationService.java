@@ -8,5 +8,5 @@ public interface EducationService {
     public String addEducation(EducationDetails _educationDetails) throws Exception;
     public List<EducationDetails> getEducationDetailsByUserId(Long _userId) throws Exception;
     public String updateEducationDetails(EducationDetails _updatedEducationDetails) throws Exception;
-    public String deleteEducationDetails(EducationDetails _educationDetailsNeedToDelete) throws Exception;
+    public String deleteEducationDetails(Long _educationDetailsIdNeedToDelete) throws Exception;
 }
