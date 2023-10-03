@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface EducationDetailsRepo extends JpaRepository<EducationDetails,Long> {
 
-    @Query(value="SELECT * FROM tbl_education_details WHERE user_id=?",nativeQuery = true)
+    @Query(value="SELECT * FROM tbl_education_details WHERE user_id=? AND is_active=true",nativeQuery = true)
     public ArrayList<EducationDetails> findEducationDetailsByUserId(Long _userId);
 
     @Modifying
