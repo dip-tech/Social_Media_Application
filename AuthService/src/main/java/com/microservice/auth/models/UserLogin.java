@@ -15,7 +15,7 @@ public class UserLogin {
     private String EMAIL_ID;
     @Column(name="mobile_no",nullable = false,unique = true)
     private String MOBILE_NO;
-    @Column(name="password")
+    @Column(name="password",nullable = false)
     private String PASSWORD;
     @Column(name="created_at")
     private Date CREATED_AT;
