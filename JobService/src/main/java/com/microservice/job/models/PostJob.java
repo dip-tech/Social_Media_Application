@@ -23,7 +23,7 @@ public class PostJob {
     private String JOB_DESCRIPTION;
     @Column(name="required_skills")
     private String REQUIRED_SKILLS;
-    @Column(name="is_active")
+    @Column(name="is_active",columnDefinition = "boolean default true")
     private Boolean IS_ACTIVE;
 
     public PostJob() {
