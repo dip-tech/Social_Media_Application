@@ -12,7 +12,7 @@ public class PostJob {
     @Column(name="user_id",nullable = false)
     private Long USER_ID;
     @Column(name="post_name")
-    private String POST_NAME;
+    private String POSITION_NAME;
     @Column(name="company_name")
     private String COMPANY_NAME;
     @Column(name="apply_link")
@@ -32,7 +32,7 @@ public class PostJob {
     public PostJob(Long ID, Long USER_ID, String POST_NAME, String COMPANY_NAME, String APPLY_LINK, String BANNER_URL, String JOB_DESCRIPTION, String REQUIRED_SKILLS, Boolean IS_ACTIVE) {
         this.ID = ID;
         this.USER_ID = USER_ID;
-        this.POST_NAME = POST_NAME;
+        this.POSITION_NAME = POST_NAME;
         this.COMPANY_NAME = COMPANY_NAME;
         this.APPLY_LINK = APPLY_LINK;
         this.BANNER_URL = BANNER_URL;
@@ -57,12 +57,12 @@ public class PostJob {
         this.USER_ID = USER_ID;
     }
 
-    public String getPOST_NAME() {
-        return POST_NAME;
+    public String getPOSITION_NAME() {
+        return POSITION_NAME;
     }
 
-    public void setPOST_NAME(String POST_NAME) {
-        this.POST_NAME = POST_NAME;
+    public void setPOSITION_NAME(String POSITION_NAME) {
+        this.POSITION_NAME = POSITION_NAME;
     }
 
     public String getCOMPANY_NAME() {
@@ -118,7 +118,7 @@ public class PostJob {
         return "PostJob{" +
                 "ID=" + ID +
                 ", USER_ID=" + USER_ID +
-                ", POST_NAME='" + POST_NAME + '\'' +
+                ", POST_NAME='" + POSITION_NAME + '\'' +
                 ", COMPANY_NAME='" + COMPANY_NAME + '\'' +
                 ", APPLY_LINK='" + APPLY_LINK + '\'' +
                 ", BANNER_URL='" + BANNER_URL + '\'' +

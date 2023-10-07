@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 public interface JobDetailsRepo extends JpaRepository<JobDetails,Long> {
-    @Query(value="SELECT * FROM tbl_job_details WHERE user_id=?",nativeQuery = true)
+    @Query(value="SELECT * FROM tbl_job_details WHERE user_id=? AND is_active=true",nativeQuery = true)
     public List<JobDetails> findJobDetailsByUserId(Long _userid);
 
     @Modifying

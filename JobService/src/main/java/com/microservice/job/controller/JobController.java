@@ -49,4 +49,12 @@ public class JobController {
             return x.getMessage();
         }
     }
+    @DeleteMapping("/delete/{job_id}")
+    public String deleJobDetailsById(@PathVariable("job_id") Long _jobID){
+        try{
+            return _jobService.deleteJobById(_jobID);
+        }catch(Exception x){
+            return x.getMessage();
+        }
+    }
 }
