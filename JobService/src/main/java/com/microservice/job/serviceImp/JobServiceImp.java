@@ -14,6 +14,7 @@ public class JobServiceImp implements JobService {
     @Override
     public String addJob(JobDetails _jobDetails) throws RuntimeException {
         if(_jobDetails.getUSER_ID()!=null){
+            _jobDetails.setIS_ACTIVE(true);
             _jobDetailsRepo.save(_jobDetails);
             return "JOB DETAILS SAVED";
         }else{
@@ -36,6 +37,16 @@ public class JobServiceImp implements JobService {
     @Override
     public List<JobDetails> getAllJobDetails() throws RuntimeException{
         return _jobDetailsRepo.findAll();
+    }
+
+    @Override
+    public String updateJobDetails(JobDetails _jobDetails) throws RuntimeException {
+        if(_jobDetails.getUSER_ID()!=null && _jobDetails.getID()!=null){
+                _jobDetailsRepo.save(_jobDetails);
+                return "JOB UPDATE SUCCESSFUL";
+        }else{
+            throw new RuntimeException("USER ID / JOB ID NOT FOUND");
+        }
     }
 
     @Override
