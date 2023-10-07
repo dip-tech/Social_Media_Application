@@ -1,5 +1,4 @@
 package com.microservice.job.models;
-
 import jakarta.persistence.*;
 
 @Entity
