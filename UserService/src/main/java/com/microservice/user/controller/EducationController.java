@@ -9,7 +9,7 @@ import com.microservice.user.models.EducationDetails;
 import com.microservice.user.serviceimp.EducationServiceImp;
 
 @RestController
-@RequestMapping("/education/v1")
+@RequestMapping("/user/education/v1")
 public class EducationController {
 
     @Autowired
