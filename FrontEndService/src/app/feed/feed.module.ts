@@ -4,6 +4,7 @@ import { BaseModule } from '../base/base.module';
 import { RouterModule,Routes } from '@angular/router';
 
 import { FeedComponent } from './feed/feed.component';
+import { AddPostComponent } from './add-post/add-post.component';
 
 const routes:Routes=[
   {path:"feeds",component:FeedComponent}
@@ -11,7 +12,8 @@ const routes:Routes=[
 
 @NgModule({
   declarations: [
-    FeedComponent
+    FeedComponent,
+    AddPostComponent
   ],
   imports: [
     CommonModule,
