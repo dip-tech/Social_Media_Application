@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { FeedComponent } from './feed/feed.component';
 import { AddPostComponent } from './add-post/add-post.component';
 
+
+
 const routes:Routes=[
   {path:"feeds",component:FeedComponent}
 ]
@@ -19,7 +21,7 @@ const routes:Routes=[
     CommonModule,
     BaseModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
   exports:[RouterModule]
 })
