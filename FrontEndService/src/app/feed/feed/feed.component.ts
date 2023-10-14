@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FeedService } from '../feed.service';
-
+import { AngularFireStorage } from '@angular/fire/compat/storage'
 
 @Component({
   selector: 'app-feed',
@@ -9,7 +9,7 @@ import { FeedService } from '../feed.service';
 })
 export class FeedComponent implements OnInit {
   imageFile:File;
-  constructor(private feedService:FeedService){}
+  constructor(private feedService:FeedService,private firebaseStorage:AngularFireStorage){}
 
   ngOnInit(): void {
 
@@ -22,9 +22,9 @@ export class FeedComponent implements OnInit {
   async onFileChanged(event) {
     this.imageFile = event.target.files[0];
     console.log(this.imageFile);
-    // const uploadImage=await this.firebaseStorage.upload(`/feed/${this.imageFile.name}`,this.imageFile);
-    // const url = await uploadImage.ref.getDownloadURL();
-    // console.log(url)
+    const uploadImage=await this.firebaseStorage.upload(`/feeds/${this.imageFile.name}`,this.imageFile);
+    const url = await uploadImage.ref.getDownloadURL();
+    console.log(url)
 
 
     // var reader = new FileReader();

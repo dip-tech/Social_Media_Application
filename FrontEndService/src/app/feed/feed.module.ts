@@ -5,9 +5,9 @@ import { RouterModule,Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FeedComponent } from './feed/feed.component';
 import { AddPostComponent } from './add-post/add-post.component';
-
-
-
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 const routes:Routes=[
   {path:"feeds",component:FeedComponent}
 ]
@@ -22,6 +22,8 @@ const routes:Routes=[
     BaseModule,
     FormsModule,
     RouterModule.forChild(routes),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule
   ],
   exports:[RouterModule]
 })
