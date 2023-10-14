@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "social-media-app-java": {
+      "hosting": {
+        "FrontEndService": [
+          "social-media-app-java"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "social-media-app-java"
+  }
+}

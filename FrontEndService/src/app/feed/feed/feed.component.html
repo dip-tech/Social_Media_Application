@@ -9,7 +9,10 @@
         <app-add-post></app-add-post>
       </div>
       <div class="col">
-        
+        <form>
+          <input type="file" name="upload"  (change)="onFileChanged($event)">
+          <button type="button" (click)="doUpload()">Upload</button>
+        </form>
       </div>
     </div>
   </div>
