@@ -1,11 +1,30 @@
 <div class="container bg-body-secondary mt-2 p-2" style="border-radius: 10px;">
     <div class="d-flex  justify-content-center">
         <img src="assets/icon-user.png" for="formGroupExampleInput2" class="form-label" width="50px" height="20px"> &nbsp;&nbsp;&nbsp;
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Start a post" style="width:90%;height: 50px;">
+        <input type="text" role="button" class="form-control border border-secondary" id="formGroupExampleInput2" placeholder="Start a post" style="width:90%;height: 50px; background: transparent;border-radius:20px;" data-bs-toggle="modal" data-bs-target="#postModal">
     </div>
     <div class="d-flex justify-content-start">
-        <img src="assets/icon-gallery.png" height="20px" width="20px" class="rounded m-2">
-        <img src="assets/icn-job.png" height="20px" width="20px" class="rounded m-2">
-        <img src="assets/icon-articale.png" height="20px" width="20px" class="rounded m-2">
+        <img src="assets/icon-gallery.png" height="20px" width="20px" class="rounded m-2" title="Post Image" style="cursor:pointer;">
+        <img src="assets/icn-job.png" height="20px" width="20px" class="rounded m-2" title="Post Job" style="cursor:pointer;">
+        <img src="assets/icon-articale.png" height="20px" width="20px" class="rounded m-2" title="Post Articals" style="cursor:pointer;">
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Write a Post</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
