@@ -1,0 +1,46 @@
+
+#mainContainer{
+    width: 100%;
+}
+
+#feedRow{
+    width:100%;
+}
+
+
+@media(max-width:720px){
+    #colProfile,#colConnection{
+        display: none;
+    }
+
+    #feedRow{
+        width:100%;
+    }
+
+    #feedCol{
+        width:100% ;
+        margin-left:10px;
+        margin-right: 5px;
+    }
+
+}
+
+@media(max-width:1000px) {
+    #colConnection{
+        display:none;
+    }
+    
+    #colProfile{
+        order: 1;
+        width:40%;
+        margin:0%;
+        background-color: green;
+       
+    }
+
+    #feedCol{
+        min-width:60%;
+        
+    }
+}
+

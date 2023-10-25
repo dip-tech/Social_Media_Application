@@ -1,30 +1,79 @@
 <div class="container bg-body-secondary mt-2 p-2" style="border-radius: 10px;">
-    <div class="d-flex  justify-content-center">
-        <img src="assets/icon-user.png" for="formGroupExampleInput2" class="form-label" width="50px" height="20px"> &nbsp;&nbsp;&nbsp;
-        <input type="text" role="button" class="form-control border border-secondary" id="formGroupExampleInput2" placeholder="Start a post" style="width:90%;height: 50px; background: transparent;border-radius:20px;" data-bs-toggle="modal" data-bs-target="#postModal">
-    </div>
-    <div class="d-flex justify-content-start">
-        <img src="assets/icon-gallery.png" height="20px" width="20px" class="rounded m-2" title="Post Image" style="cursor:pointer;">
-        <img src="assets/icn-job.png" height="20px" width="20px" class="rounded m-2" title="Post Job" style="cursor:pointer;">
-        <img src="assets/icon-articale.png" height="20px" width="20px" class="rounded m-2" title="Post Articals" style="cursor:pointer;">
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Write a Post</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="d-flex  justify-content-center">
+    <img src="assets/icon-user.png" for="formGroupExampleInput2" class="form-label" width="50px" height="20px">
+    &nbsp;&nbsp;&nbsp;
+    <input type="text" role="button" class="form-control border border-secondary" id="formGroupExampleInput2"
+      placeholder="Start a post" style="width:90%;height: 50px; background: transparent;border-radius:20px;"
+      data-bs-toggle="modal" data-bs-target="#postModal">
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="container text-center">
+      <div class="row align-items-center">
+        <div class="col" style="font-family: 'Exo 2', sans-serif;font-weight:200;cursor: pointer;">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"
+              class="rounded mx-auto d-block"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <style>
+                svg {
+                  fill: #777879
+                }
+              </style>
+              <path
+                d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM323.8 202.5c-4.5-6.6-11.9-10.5-19.8-10.5s-15.4 3.9-19.8 10.5l-87 127.6L170.7 297c-4.6-5.7-11.5-9-18.7-9s-14.2 3.3-18.7 9l-64 80c-5.8 7.2-6.9 17.1-2.9 25.4s12.4 13.6 21.6 13.6h96 32H424c8.9 0 17.1-4.9 21.2-12.8s3.6-17.4-1.4-24.7l-120-176zM112 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z" />
+            </svg>
+          </span>
+          Media
         </div>
-        <div class="modal-body">
-          ...
+        <div class="col" style="font-family: 'Exo 2', sans-serif;font-weight:200;cursor: pointer;">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"
+              class="rounded mx-auto d-block"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <style>
+                svg {
+                  fill: #777879
+                }
+              </style>
+              <path
+                d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z" />
+            </svg>
+          </span>
+          Jobs
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-success">Save changes</button>
+        <div class="col" style="font-family: 'Exo 2', sans-serif;font-weight:200;cursor:pointer;">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" height="2em" class="rounded mx-auto d-block"
+              viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <style>
+                svg {
+                  fill: #777879
+                }
+              </style>
+              <path
+                d="M96 96c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H80c-44.2 0-80-35.8-80-80V128c0-17.7 14.3-32 32-32s32 14.3 32 32V400c0 8.8 7.2 16 16 16s16-7.2 16-16V96zm64 24v80c0 13.3 10.7 24 24 24H296c13.3 0 24-10.7 24-24V120c0-13.3-10.7-24-24-24H184c-13.3 0-24 10.7-24 24zm208-8c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H384c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H384c-8.8 0-16 7.2-16 16zM160 304c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zm0 96c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16s-7.2-16-16-16H176c-8.8 0-16 7.2-16 16z" />
+            </svg>
+          </span>
+          Articles
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Write a Post</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
