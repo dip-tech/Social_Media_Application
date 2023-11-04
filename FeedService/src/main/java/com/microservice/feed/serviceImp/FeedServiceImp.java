@@ -27,11 +27,20 @@ public class FeedServiceImp implements FeedService {
 
     @Override
     public String updatePost(Feed $UPDATED_FEED) throws Exception {
-        return null;
+        if($UPDATED_FEED.getID()!=null && $UPDATED_FEED.getUSER_ID()!=null){
+            $FEED_REPO.save($UPDATED_FEED);
+            return "UPDATE SUCCESSFUL";
+        }
+        else {
+            throw new Exception("FEED ID or USER ID NOT FOUND");
+        }
     }
 
     @Override
-    public String deletePost(String $POST_ID) throws Exception {
+    public String deletePost(Long $POST_ID) throws Exception {
+        if($POST_ID!=null){
+            $FEED_REPO.deleteById($POST_ID);
+        }
         return null;
     }
 }

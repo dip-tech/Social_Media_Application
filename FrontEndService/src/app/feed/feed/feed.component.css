@@ -1,6 +1,8 @@
 
 #mainContainer{
-    width: 100%;
+    width: 70%;
+    margin:auto
+
 }
 
 #feedRow{
@@ -9,6 +11,9 @@
 
 
 @media(max-width:720px){
+    #mainContainer{
+        width:100%;
+    }
     #colProfile,#colConnection{
         display: none;
     }
@@ -26,6 +31,10 @@
 }
 
 @media(max-width:1000px) {
+    #mainContainer{
+        width:90%;
+    }
+
     #colConnection{
         display:none;
     }
@@ -34,7 +43,7 @@
         order: 1;
         width:40%;
         margin:0%;
-        background-color: green;
+        background-color: lightgrey;
        
     }
 

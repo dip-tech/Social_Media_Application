@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+
+  @Input()
+  currentTabHome:any;
+
+  @Input()
+  currentTabNetwork:any;
+
+  @Input()
+  currentTabJobs:any;
+
+  @Input()
+  currentTabMessaging:any;
+
+
+  @Input()
+  currentTabNotification:any;
+
+
 
 }
