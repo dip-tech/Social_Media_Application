@@ -20,16 +20,20 @@ public class Feed {
     @Column(name="feed_poster_name")
     private String FEED_POSTER_NAME;
 
+    @Column(name="is_active")
+    private Boolean IS_ACTIVE=true;
+
     public Feed() {
     }
 
-    public Feed(Long ID, Long USER_ID, String FEED_TITLE, String FEED_DESCRIPTION, String FEED_IMAGE_PATH, String FEED_POSTER_NAME) {
+    public Feed(Long ID, Long USER_ID, String FEED_TITLE, String FEED_DESCRIPTION, String FEED_IMAGE_PATH, String FEED_POSTER_NAME, Boolean IS_ACTIVE) {
         this.ID = ID;
         this.USER_ID = USER_ID;
         this.FEED_TITLE = FEED_TITLE;
         this.FEED_DESCRIPTION = FEED_DESCRIPTION;
         this.FEED_IMAGE_PATH = FEED_IMAGE_PATH;
         this.FEED_POSTER_NAME = FEED_POSTER_NAME;
+        this.IS_ACTIVE = IS_ACTIVE;
     }
 
     public Long getID() {
@@ -80,6 +84,14 @@ public class Feed {
         this.FEED_POSTER_NAME = FEED_POSTER_NAME;
     }
 
+    public Boolean getIS_ACTIVE() {
+        return IS_ACTIVE;
+    }
+
+    public void setIS_ACTIVE(Boolean IS_ACTIVE) {
+        this.IS_ACTIVE = IS_ACTIVE;
+    }
+
     @Override
     public String toString() {
         return "Feed{" +
@@ -89,6 +101,7 @@ public class Feed {
                 ", FEED_DESCRIPTION='" + FEED_DESCRIPTION + '\'' +
                 ", FEED_IMAGE_PATH='" + FEED_IMAGE_PATH + '\'' +
                 ", FEED_POSTER_NAME='" + FEED_POSTER_NAME + '\'' +
+                ", IS_ACTIVE=" + IS_ACTIVE +
                 '}';
     }
 }

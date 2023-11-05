@@ -32,13 +32,22 @@ public class FeedController {
         }
     }
 
-    @PostMapping("/update")
-    public String updatePost(){
-        return  null;
+    @PutMapping("/update")
+    public String updatePost(@RequestBody Feed $UPDATED_FEED){
+        try{
+            $FEED_SERVICE.updatePost($UPDATED_FEED);
+            return "POST UPDATED";
+        }catch(Exception x) {
+            return x.getMessage();
+        }
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deletePost(){
-        return null;
+    public String deletePost(@PathVariable("id") Long $ID){
+        try{
+            return $FEED_SERVICE.deletePost($ID);
+        }catch(Exception x){
+            return x.getMessage();
+        }
     }
 }

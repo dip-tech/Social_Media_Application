@@ -39,7 +39,8 @@ public class FeedServiceImp implements FeedService {
     @Override
     public String deletePost(Long $POST_ID) throws Exception {
         if($POST_ID!=null){
-            $FEED_REPO.deleteById($POST_ID);
+            $FEED_REPO.inActive($POST_ID);
+            return "POST DELETED";
         }
         return null;
     }
