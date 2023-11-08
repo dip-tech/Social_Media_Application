@@ -8,5 +8,6 @@ export const environment = {
     authDomain: 'social-media-app-java.firebaseapp.com',
     messagingSenderId: '480989169715',
     measurementId: 'G-3YMPSK5RKL',
-  }
+  },
+  backendGateway:'http://localhost:8001/'
 };
