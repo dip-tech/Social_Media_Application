@@ -6,6 +6,10 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
+import { environment } from 'src/environments/environment';
+
 
 
 const routes:Routes=[
@@ -24,7 +28,9 @@ const routes:Routes=[
     CommonModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule
    
   ],
   providers:[AuthService],
