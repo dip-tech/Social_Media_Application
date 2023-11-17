@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FeedService } from '../feed.service';
-import { AngularFireStorage } from '@angular/fire/compat/storage'
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -9,9 +10,15 @@ import { AngularFireStorage } from '@angular/fire/compat/storage'
 })
 export class FeedComponent implements OnInit {
   imageFile:File;
-  constructor(private feedService:FeedService,private firebaseStorage:AngularFireStorage){}
+  userData:JSON;
+  constructor(private feedService:FeedService,private firebaseStorage:AngularFireStorage,private router:Router){}
 
   ngOnInit(): void {
+    if(localStorage.getItem('user')!=null){
+      this.userData=JSON.parse(localStorage.getItem("user"));
+    }else{
+      this.router.navigateByUrl("/auth/login");
+    }
 
   }
 

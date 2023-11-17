@@ -47,6 +47,7 @@ public class JwtUtills implements Serializable {
 		claims.put("username",userDetails.getUsername());
 		claims.put("name",_userDetails.getFIRST_NAME()+" "+_userDetails.getLAST_NAME());
 		claims.put("type",_userLogin.getUSER_TYPE());
+		claims.put("icon",_userDetails.getPROFILE_PHOTO());
 		return Jwts.builder().setClaims(claims)
 				.setIssuedAt(new Date(System.currentTimeMillis()))
 				.setExpiration(new Date(System.currentTimeMillis() + TOKEN_VALIDITY * 1000))
