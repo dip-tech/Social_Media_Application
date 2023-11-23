@@ -1,39 +1,19 @@
-package com.microservice.auth.models;
+package com.microservice.feed.data_access_object;
 
 import jakarta.persistence.*;
-
-@Entity
-@Table(name="tbl_user_details")
 public class UserDetails {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id",nullable = false)
     private Long ID;
-    @Column(name="user_login_id",nullable = false,unique = true)
     private Long USER_LOGIN_ID;
-    @Column(name="first_name")
     private String FIRST_NAME;
-    @Column(name="last_name")
     private String LAST_NAME;
-    @Column(name="profile_photo")
     private String PROFILE_PHOTO;
-    @Column(name="gender")
     private String GENDER;
-    @Column(name="street_address")
     private String STREET_ADDRESS;
-    @Column(name="city")
     private String CITY;
-    @Column(name="state")
     private String STATE;
-    @Column(name="postal_code")
     private String POSTAL_CODE;
-    @Column(name="country")
     private String COUNTRY;
-    @Column(name="about")
     private String ABOUT;
-
-    @Column(name="info")
     private String INFO;
 
     public UserDetails() {

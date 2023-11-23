@@ -10,6 +10,7 @@ export class AddPostComponent implements OnInit {
   $IMAGE_PATH: any = null;
   $SHOW_IMAGE: boolean = false;
   $LOGIN_USER_DATA:any;
+  $ENABLE_APPLY_LINK_FIELD:boolean=false;
   public Editor=ClassicEditor;
   constructor(){}
 
@@ -36,5 +37,13 @@ export class AddPostComponent implements OnInit {
   removeFile(){
     this.$IMAGE_PATH=null;
     this.$SHOW_IMAGE=false;
+  }
+
+  easyApplyToggle(){
+    if(this.$ENABLE_APPLY_LINK_FIELD==false){
+      this.$ENABLE_APPLY_LINK_FIELD=true;
+    }else{
+      this.$ENABLE_APPLY_LINK_FIELD=false;
+    }
   }
 }

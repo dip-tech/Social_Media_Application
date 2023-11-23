@@ -1,18 +1,28 @@
 package com.microservice.feed.serviceImp;
 
+import com.microservice.feed.data_access_object.FeedDetails;
+import com.microservice.feed.data_access_object.UserDetails;
 import com.microservice.feed.models.Feed;
 import com.microservice.feed.repo.FeedRepo;
 import com.microservice.feed.service.FeedService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.Collections;
-import java.util.List;
+import java.lang.reflect.Method;
+import java.util.*;
 
 @Service
 public class FeedServiceImp implements FeedService {
     @Autowired
     FeedRepo $FEED_REPO;
+
+    @Autowired
+    RestTemplate restTemplate;
     @Override
     public String addPost(Feed $NEW_FEED) throws Exception {
         $FEED_REPO.save($NEW_FEED);
@@ -20,9 +30,17 @@ public class FeedServiceImp implements FeedService {
     }
 
     @Override
-    public List<Feed> getAllPost() throws Exception {
+    public List<FeedDetails> getAllPost() throws Exception {
         List<Feed> $ALL_FEEDS=$FEED_REPO.findAll();
-        return Collections.unmodifiableList($ALL_FEEDS);
+        List<FeedDetails> feedDetailsList=new ArrayList<FeedDetails>();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        HttpEntity<String> entity = new HttpEntity<String>(headers);
+        for(Feed feed:$ALL_FEEDS){
+            UserDetails userDetails=restTemplate.exchange("http://localhost:8001/user/v1/get_user_details/"+feed.getUSER_ID(), HttpMethod.GET,entity,UserDetails.class).getBody();
+            feedDetailsList.add(new FeedDetails(feed,userDetails));
+        }
+        return Collections.unmodifiableList(feedDetailsList);
     }
 
     @Override

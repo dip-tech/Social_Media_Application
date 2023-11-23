@@ -1,5 +1,6 @@
 package com.microservice.feed.controller;
 
+import com.microservice.feed.data_access_object.FeedDetails;
 import com.microservice.feed.models.Feed;
 import com.microservice.feed.serviceImp.FeedServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/feed/v1")
 public class FeedController {
@@ -23,11 +25,12 @@ public class FeedController {
     }
 
     @GetMapping("/get_all")
-    public List<Feed> viewPost(){
+    public List<FeedDetails> viewPost(){
         try{
-            List<Feed> $ALL_FEEDS=$FEED_SERVICE.getAllPost();
+            List<FeedDetails> $ALL_FEEDS=$FEED_SERVICE.getAllPost();
             return $ALL_FEEDS;
         }catch(Exception x){
+            x.printStackTrace();
             return null;
         }
     }

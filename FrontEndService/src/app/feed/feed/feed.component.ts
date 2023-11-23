@@ -3,6 +3,7 @@ import { FeedService } from '../feed.service';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class FeedComponent implements OnInit {
   imageFile:File;
-  userData:JSON;
+  userData:any;
   constructor(private feedService:FeedService,private firebaseStorage:AngularFireStorage,private router:Router){}
 
   ngOnInit(): void {
@@ -19,6 +20,8 @@ export class FeedComponent implements OnInit {
     }else{
       this.router.navigateByUrl("/auth/login");
     }
+
+    this.loadFeeds();
 
   }
 
@@ -39,6 +42,13 @@ export class FeedComponent implements OnInit {
     // reader.onload = (event) => {
     //  this.imageShow = (<FileReader>event.target).result;
      
+   }
+
+   loadFeeds(){
+      let res=this.feedService.doGetAllFeeds();
+      res.subscribe(data=>{
+        console.log(data);
+      })
    }
    
   

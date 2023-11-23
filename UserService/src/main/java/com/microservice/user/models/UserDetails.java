@@ -33,10 +33,13 @@ public class UserDetails {
     @Column(name="about")
     private String ABOUT;
 
+    @Column(name="info")
+    private String INFO;
+
     public UserDetails() {
     }
 
-    public UserDetails(Long ID, Long USER_LOGIN_ID, String FIRST_NAME, String LAST_NAME, String PROFILE_PHOTO, String GENDER, String STREET_ADDRESS, String CITY, String STATE, String POSTAL_CODE, String COUNTRY, String ABOUT) {
+    public UserDetails(Long ID, Long USER_LOGIN_ID, String FIRST_NAME, String LAST_NAME, String PROFILE_PHOTO, String GENDER, String STREET_ADDRESS, String CITY, String STATE, String POSTAL_CODE, String COUNTRY, String ABOUT, String INFO) {
         this.ID = ID;
         this.USER_LOGIN_ID = USER_LOGIN_ID;
         this.FIRST_NAME = FIRST_NAME;
@@ -49,6 +52,7 @@ public class UserDetails {
         this.POSTAL_CODE = POSTAL_CODE;
         this.COUNTRY = COUNTRY;
         this.ABOUT = ABOUT;
+        this.INFO = INFO;
     }
 
     public Long getID() {
@@ -147,6 +151,14 @@ public class UserDetails {
         this.ABOUT = ABOUT;
     }
 
+    public String getINFO() {
+        return INFO;
+    }
+
+    public void setINFO(String INFO) {
+        this.INFO = INFO;
+    }
+
     @Override
     public String toString() {
         return "UserDetails{" +
@@ -162,6 +174,7 @@ public class UserDetails {
                 ", POSTAL_CODE='" + POSTAL_CODE + '\'' +
                 ", COUNTRY='" + COUNTRY + '\'' +
                 ", ABOUT='" + ABOUT + '\'' +
+                ", INFO='" + INFO + '\'' +
                 '}';
     }
 }

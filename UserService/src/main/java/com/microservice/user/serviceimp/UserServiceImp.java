@@ -40,6 +40,14 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
+    public UserDetails doGetUserDetailsByUserID(Long user_id) {
+        if(user_id!=null){
+            return _userDetailsRepo.findById(user_id).get();
+        }
+        return null;
+    }
+
+    @Override
     public List<User> doGetAllUser() {
         ArrayList<User> _userList=new ArrayList<User>();
         List<UserLogin> _userLoginList=_userLoginRepo.findAll();
