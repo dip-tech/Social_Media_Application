@@ -7,7 +7,9 @@ import { FeedComponent } from './feed/feed.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage'
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 const routes:Routes=[
   {path:"feeds",component:FeedComponent}
 ]
@@ -21,6 +23,7 @@ const routes:Routes=[
     CommonModule,
     BaseModule,
     FormsModule,
+    CKEditorModule,
     RouterModule.forChild(routes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule

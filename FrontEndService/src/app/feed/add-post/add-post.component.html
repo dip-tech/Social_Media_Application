@@ -1,16 +1,17 @@
-<div class="container  mt-2 p-2" style="border-radius: 10px; background-color: #F5F5DC;">
-  <div class="d-flex  justify-content-center" >
-    <img src="assets/icon-user.png" for="formGroupExampleInput2" class="form-label" width="50px" height="20px">
+<div class="container  mt-2 p-2 bg-light" style="border-radius: 10px;">
+  <div class="d-flex  justify-content-center">
+    <img src="{{$LOGIN_USER_DATA.icon}}" for="formGroupExampleInput2" class="form-label"
+      style="height:50px;width: 50px;border-radius:50%;object-fit: scale-down;">
     &nbsp;&nbsp;&nbsp;
     <input type="text" role="button" class="form-control border border-secondary" id="formGroupExampleInput2"
       placeholder="Start a post" style="width:80%;height: 40px; background: transparent;border-radius:20px;"
       data-bs-toggle="modal" data-bs-target="#postModal">
   </div>
-  <div class="d-flex justify-content-center" >
-    <div class="container text-center" >
-      <div class="row align-items-center" >
+  <div class="d-flex justify-content-center">
+    <div class="container text-center">
+      <div class="row align-items-center">
         <div class="col" style="font-family: 'Exo 2', sans-serif;font-weight:200;cursor: pointer;">
-          <span>
+          <span role="button" data-bs-toggle="modal" data-bs-target="#postModal">
             <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"
               class="rounded mx-auto d-block"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
               <style>
@@ -25,7 +26,7 @@
           <small>Media</small>
         </div>
         <div class="col" style="font-family: 'Exo 2', sans-serif;font-weight:200;cursor: pointer;">
-          <span>
+          <span role="button" data-bs-toggle="modal" data-bs-target="#postjob">
             <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"
               class="rounded mx-auto d-block"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
               <style>
@@ -59,14 +60,14 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal for post feed-->
 <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <img src="/assets/icon-user.png" style="height:30px;width:30px" class="rounded float-start"
-          alt="...">&nbsp;&nbsp;
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Dipankar Dutta</h1>
+        <img src="{{$LOGIN_USER_DATA.icon}}" style="height:30px;width:30px;object-fit:scale-down;"
+          class="rounded float-start" alt="...">&nbsp;&nbsp;
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{$LOGIN_USER_DATA.name}} | POST UPDATE</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -74,9 +75,11 @@
           <textarea class="form-control" aria-label="With textarea" style="width:100%;height:200px;border:none"
             placeholder="What do you want to talk about?"></textarea>
           <span *ngIf="$SHOW_IMAGE" class="position-relative">
-            <img  src="{{$IMAGE_PATH}}" style="width:100px;height:100px;object-fit: cover;box-shadow: 1px 1px 10px 1px;border-radius:10px;">
-            <span  class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light badge rounded-pill">
-              <span  class="btn-close" aria-label="Close" (click)="removeFile()" style="cursor: pointer;"></span>
+            <img src="{{$IMAGE_PATH}}"
+              style="width:100px;height:auto;object-fit:scale-down;box-shadow: 1px 1px 10px 1px;border-radius:10px;">
+            <span
+              class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light badge rounded-pill">
+              <span class="btn-close" aria-label="Close" (click)="removeFile()" style="cursor: pointer;"></span>
             </span>
           </span>
         </div>
@@ -98,8 +101,49 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Post</button>
+        <button type="button" class="btn btn-outline-primary">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal for job post-->
+<div class="modal fade" id="postjob" tabindex="-1" aria-labelledby="postjob" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="{{$LOGIN_USER_DATA.icon}}" style="height:30px;width:30px;object-fit:scale-down;"
+          class="rounded float-start" alt="...">&nbsp;&nbsp;
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{$LOGIN_USER_DATA.name}} | POST NEW JOB</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="postname" class="form-label">Post Name</label>
+            <input type="text" class="form-control" id="postname">
+          </div>
+          <div class="col-md-6">
+            <label for="companyname" class="form-label">Company Name</label>
+            <input type="text" class="form-control" id="companyname">
+          </div>
+          <div class="col-12">
+            <label for="applylink" class="form-label">Apply Link</label>
+            <input type="text" class="form-control" id="applylink">
+          </div>
+          <div class="col-12">
+            <label for="bannerurl" class="form-label">Banner URL</label>
+            <input type="text" class="form-control" id="bannerurl">
+          </div>
+          <div class="col-12">
+            <label for="job-description" class="form-label">Job Description</label>
+            <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary">Post</button>
       </div>
     </div>
   </div>

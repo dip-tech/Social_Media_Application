@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-add-post',
@@ -8,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class AddPostComponent implements OnInit {
   $IMAGE_PATH: any = null;
   $SHOW_IMAGE: boolean = false;
-  
+  $LOGIN_USER_DATA:any;
+  public Editor=ClassicEditor;
+  constructor(){}
 
 
   ngOnInit(): void {
+    this.$LOGIN_USER_DATA=JSON.parse(localStorage.getItem("user"));
 
   }
 

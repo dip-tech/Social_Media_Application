@@ -4,7 +4,7 @@
   Plugins:
     - @tailwindcss/forms
 -->
-<div class="container-fluid matirial-bg-yellow" style="height:80px;">
+<div class="container-fluid bg-light" style="height:80px;">
     <div class=" py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-20 lg:px-5 ">
         <div class="relative flex items-center justify-between">
             <a href="/" aria-label="Company" title="Company" class="inline-flex items-center">
@@ -14,7 +14,7 @@
             </a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
             <ul class="flex items-center hidden space-x-8 lg:flex">
                 
@@ -47,14 +47,14 @@
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 nav-link"><small>Notification</small></a>
                 </li>
                 <li class="dropdown nav-item">
-                    <img src="assets/icon-user.png" height="20px" width="20px" class="rounded mx-auto d-block">
+                    <img src="{{loginUserData.icon}}" height="20px" width="20px" class="rounded mx-auto d-block">
                     <a href="#" aria-label="About us" title="About us"
                         class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown"><small>Me</small></a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Help</a></li>
                             <li><a class="dropdown-item" href="#">Post & Activity</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                            <li><a class="dropdown-item"  (click)="doSignOut()">Sign Out</a></li>
                           </ul>    
                 </li>
             </ul>
