@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class FeedComponent implements OnInit {
   imageFile:File;
   userData:any;
+  feedlist:any=[];
   constructor(private feedService:FeedService,private firebaseStorage:AngularFireStorage,private router:Router){}
 
   ngOnInit(): void {
@@ -47,7 +48,8 @@ export class FeedComponent implements OnInit {
    loadFeeds(){
       let res=this.feedService.doGetAllFeeds();
       res.subscribe(data=>{
-        console.log(data);
+        this.feedlist=data;
+        console.log(this.feedlist);
       })
    }
    

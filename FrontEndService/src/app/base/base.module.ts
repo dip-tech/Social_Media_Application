@@ -6,6 +6,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { BaseviewComponent } from './baseview/baseview.component';
 
 const routes:Routes=[
+  {path:"",redirectTo:"404/page-not-found",pathMatch:"full"},
   {path:"page-not-found",component:PageNotFoundComponent}
 ]
 

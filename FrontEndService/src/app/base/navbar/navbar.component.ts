@@ -14,7 +14,6 @@ export class NavbarComponent implements OnInit{
   }
   ngOnInit(): void {
     this.loginUserData=JSON.parse(localStorage.getItem('user'));
-    console.log(this.loginUserData.icon);
   }
 
   @Input()
