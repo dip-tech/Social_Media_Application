@@ -13,9 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FeedService } from './feed.service';
 
 const routes:Routes=[
-  {path:"feeds",component:FeedComponent}
+  {path:"",component:FeedComponent}
 ]
-
 @NgModule({
   declarations: [
     FeedComponent,

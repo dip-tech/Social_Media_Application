@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RouterModule,Routes } from '@angular/router';
+import { BaseviewComponent } from './baseview/baseview.component';
 
 const routes:Routes=[
-  {path:"",component:PageNotFoundComponent}
+  {path:"page-not-found",component:PageNotFoundComponent}
 ]
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    BaseviewComponent
   ],
   imports: [
     CommonModule,
